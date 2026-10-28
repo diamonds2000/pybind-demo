@@ -10,6 +10,8 @@ pybind11_add_module(Force
     pymod.cpp
     Force.cpp
     Force.h
+    SCForce.cpp
+    SCForce.h
     ForceList.cpp
     ForceList.h
 )

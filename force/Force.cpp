@@ -4,7 +4,7 @@
 
 
 Force::Force(const std::string& name)
-    : m_name(name)
+    : m_name(name), m_type(Unknown)
 {
     std::cout << "Force created with name: " << m_name << std::endl;
 }
@@ -22,4 +22,9 @@ std::string Force::name() const
 void Force::setName(const std::string& name)
 {
     m_name = name;
+}
+
+ForceType Force::type() const
+{
+    return m_type;
 }
