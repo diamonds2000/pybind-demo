@@ -6,9 +6,11 @@ class SCForce : public Force
 public:
     SCForce(const std::string& name);
 
-    void setMagnitude(double magnitude);
+    virtual std::string name() const;
 
-    double magnitude() const;
+    virtual double magnitude() const;
+
+    void setMagnitude(double magnitude);
 
 private:
     double m_magnitude;

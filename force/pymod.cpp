@@ -3,6 +3,7 @@
 #include <pybind11/stl.h>
 #include "Force.h"
 #include "SCForce.h"
+#include "MCForce.h"
 #include "ForceList.h"
 
 namespace py = pybind11;
@@ -20,9 +21,16 @@ PYBIND11_MODULE(Force, m) {
         .def_property("name", &Force::name, &Force::setName)
         .def_property_readonly("type", &Force::type);
 
-    py::class_<SCForce>(m, "SCForce", py::base<Force>())
+    py::class_<SCForce, Force>(m, "SCForce")
         .def(py::init<const std::string&>())
         .def_property("magnitude", &SCForce::magnitude, &SCForce::setMagnitude);
+
+    py::class_<MCForce, Force>(m, "MCForce")
+        .def(py::init<const std::string&>())
+        .def_property("componentX", py::cpp_function(), &MCForce::setComponentX)
+        .def_property("componentY", py::cpp_function(), &MCForce::setComponentY)
+        .def_property("componentZ", py::cpp_function(), &MCForce::setComponentZ)
+        .def_property_readonly("magnitude", &MCForce::magnitude);
 
     py::class_<ForceList>(m, "ForceList")
         .def(py::init<>())

@@ -17,6 +17,8 @@ public:
 
     virtual std::string name() const;
 
+    virtual double magnitude() const { return 0.0; };
+
     void setName(const std::string& name);
 
     ForceType type() const;
