@@ -7,4 +7,5 @@ endif()
 project(pybind_demo)
 
 add_subdirectory(force)
+add_subdirectory(model)
 add_subdirectory(app)

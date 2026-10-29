@@ -1,4 +1,6 @@
 #pragma once
+
+#include "predefined.h"
 #include <string>
 
 enum ForceType
@@ -9,7 +11,7 @@ enum ForceType
 };
 
 
-class Force
+class FORCE_API Force
 {
 public:
     Force(const std::string& name);

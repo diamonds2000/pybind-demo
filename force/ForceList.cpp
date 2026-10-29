@@ -8,7 +8,7 @@ void ForceList::addForce(Force* force)
     std::cout << "Force added to ForceList: " << force->name() << std::endl;
 }
 
-void ForceList::removeForce(Force* force)
+void ForceList::removeForce(const Force* force)
 {
     auto it = std::find(m_forces.begin(), m_forces.end(), force);
     if (it != m_forces.end())

@@ -1,7 +1,8 @@
 #pragma once
 #include "Force.h"
+#include "predefined.h"
 
-class SCForce : public Force
+class FORCE_API SCForce : public Force
 {
 public:
     SCForce(const std::string& name);
